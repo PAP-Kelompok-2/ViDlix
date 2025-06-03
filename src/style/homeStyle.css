@@ -243,14 +243,14 @@ nav {
 
 .mobile-menu .button-sidebar {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .mobile-menu .button-sidebar button {
   font-family: "Sora", sans-serif;
   font-weight: 600;
-  font-size: 14px;
-  padding: 8px 2rem;
+  font-size: 13px;
+  padding: 8px 1rem;
   border-radius: 10px;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -526,13 +526,13 @@ nav {
 
   /* Footer mobile style */
   .footer {
-    padding: 2rem 1.5rem;
+    padding: 2rem 2rem;
   }
 
   .footer-section {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .section-info {
@@ -555,11 +555,13 @@ nav {
 
   .information-item {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: var(--neutral-color500);
-    font-size: 14px;
+    gap: 0.8rem;
+  }
+
+  .information-item p {
+    text-align: start;
+    word-break: break-word;
+    font-size: 16px;
   }
 
   .socmed-col {
@@ -569,8 +571,8 @@ nav {
   }
 
   .socmed-col .socmed-item svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     color: var(--neutral-color500);
   }
 
