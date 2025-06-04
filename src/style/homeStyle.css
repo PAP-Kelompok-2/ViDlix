@@ -1,0 +1,638 @@
+/* CSS nya kalian Copy dari sini */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap");
+:root {
+  /* Primary color */
+  --primary-color100: #000000;
+  --primary-color200: #222222;
+  --primary-color300: #454545;
+  --primary-color400: #717171;
+  --primary-color500: #aaaaaa;
+
+  /* Secondary color */
+  --secondary-color100: #6a0000;
+  --secondary-color200: #b20000;
+  --secondary-color300: #f7374f;
+  --secondary-color400: #f97f7f;
+  --secondary-color500: #e13636;
+
+  /* Neutral color */
+  --neutral-color100: #555555;
+  --neutral-color200: #949494;
+  --neutral-color300: #c3c3c3;
+  --neutral-color400: #dedede;
+  --neutral-color500: #ebebeb;
+
+  /* Font */
+  --font-sora: "Sora", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* Custom Prefix */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: var(--font-dm-sans);
+}
+
+/* Navbar Styling */
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: white;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.1rem 5rem;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0px 2px 8px 0px rgba(107, 107, 107, 0.57);
+}
+
+.logo-link {
+  display: flex;
+  gap: 4.5rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo-link ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.logo-link ul li a {
+  position: relative;
+  text-decoration: none;
+  color: var(--primary-color100);
+  font-family: var(--font-dm-sans);
+  font-size: 20px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.logo-link ul li a.active {
+  font-weight: 600;
+}
+
+.logo-link ul li a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2.6rem;
+  width: 100%;
+  height: 4px;
+  background-color: var(--secondary-color200);
+  border-radius: 10px;
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.logo-link ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2.6rem;
+  width: 100%;
+  height: 4px;
+  background-color: var(--secondary-color200);
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-link ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+.button-nav {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-nav .login {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--secondary-color200);
+  background-color: white;
+  color: var(--secondary-color200);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button-nav .login:hover {
+  background-color: var(--secondary-color200);
+  color: white;
+}
+
+.button-nav .signup {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--primary-color100);
+  background-color: var(--primary-color100);
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button-nav .signup:hover {
+  background-color: var(--primary-color200);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger svg {
+  width: 32px;
+  height: 32px;
+  color: var(--primary-color100);
+}
+
+/* Mobile Menu Styling */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background-color: var(--primary-color100);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+  padding: 2rem;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu .close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu .close-btn svg {
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+.mobile-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile-menu ul li a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: var(--font-dm-sans);
+  transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a.active {
+  font-weight: 600;
+}
+
+.mobile-menu ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4rem;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary-color200);
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu ul li a:hover::after,
+.mobile-menu ul li a:active::after,
+.mobile-menu ul li a.active::after {
+  transform: scaleX(1);
+}
+
+.mobile-menu .button-sidebar {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.mobile-menu .button-sidebar button {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 1rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.mobile-menu .button-sidebar button.login {
+  border: 1px solid var(--secondary-color200);
+  color: var(--secondary-color200);
+  background-color: transparent;
+}
+
+.mobile-menu .button-sidebar button.login:hover {
+  background-color: var(--secondary-color200);
+  color: white;
+}
+
+.mobile-menu .button-sidebar button.signup {
+  border: 1px solid var(--primary-color400);
+  color: white;
+  background-color: var(--primary-color100);
+}
+
+.mobile-menu .button-sidebar button.signup:hover {
+  background-color: var(--primary-color200);
+}
+
+/* Footer Styling */
+.footer {
+  background-color: var(--primary-color200);
+  padding: 4rem 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-section .logo-footer img {
+  width: 15rem;
+  height: 8rem;
+}
+
+.footer-section .section-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-section .section-menu {
+  display: flex;
+  gap: 6rem;
+}
+
+.information-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.information-item {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  color: white;
+}
+
+.information-item svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.information-item p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.socmed-col {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.socmed-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.2rem;
+  height: 4.2rem;
+  border: 1px solid var(--neutral-color500);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.socmed-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.socmed-item svg {
+  width: 1.8rem;
+  height: 1.8em;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.socmed-item:hover {
+  background-color: var(--secondary-color200);
+  border-color: var(--secondary-color200);
+}
+
+.socmed-item:hover svg {
+  color: white;
+}
+
+.section-menu {
+  display: flex;
+  gap: 6rem;
+}
+
+.navigation-menu,
+.support-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+}
+
+.title-menu {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid white;
+}
+
+.navigation-menu h4,
+.support-menu h4 {
+  font-family: var(--font-inter);
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.navigation-footer,
+.support-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navigation-footer li a,
+.support-menu ul li a {
+  color: var(--neutral-color500);
+  font-family: var(--font-inter);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navigation-footer li a:hover,
+.support-menu ul li a:hover {
+  color: var(--secondary-color200);
+}
+
+.footer-credential {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  gap: 1rem;
+  color: var(--neutral-color500);
+}
+
+.footer-credential hr {
+  width: 90%;
+  border: none;
+  height: 1px;
+  background-color: var(--neutral-color500);
+  opacity: 0.4;
+}
+
+.footer-credential span {
+  font-size: 20px;
+  font-family: var(--font-inter);
+  font-weight: 500;
+}
+
+/* Sampe sini oke */
+
+/* Slider */
+.slider-section {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.slider-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.slider-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 15rem;
+  left: 9rem;
+  gap: 2rem;
+}
+
+.slider-label {
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  background-color: #b20000;
+  color: white;
+  text-align: center;
+}
+
+/* Responsive Breakpoint (Kalian juga copy ini ya untuk responsive nya )*/
+@media screen and (max-width: 768px) {
+  /* Navbar responsif style */
+  nav {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .logo-link {
+    gap: 1.5rem;
+  }
+
+  .logo-link img {
+    width: 100px;
+    height: auto;
+  }
+
+  .logo-link ul {
+    display: none;
+  }
+
+  .button-nav {
+    gap: 0.4rem;
+  }
+
+  .button-nav .login,
+  .button-nav .signup {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Footer mobile style */
+  .footer {
+    padding: 2rem 2rem;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .section-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .section-info .logo-footer img {
+    width: 150px;
+  }
+
+  .information-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .information-item {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .information-item p {
+    text-align: start;
+    word-break: break-word;
+    font-size: 16px;
+  }
+
+  .socmed-col {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .socmed-col .socmed-item svg {
+    width: 20px;
+    height: 20px;
+    color: var(--neutral-color500);
+  }
+
+  .section-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .navigation-menu,
+  .support-menu {
+    text-align: center;
+  }
+
+  .title-menu h4 {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+    color: var(--neutral-color500);
+  }
+
+  .navigation-footer,
+  .support-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .navigation-footer li a,
+  .support-menu ul li a {
+    text-decoration: none;
+    color: var(--neutral-color500);
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+
+  .navigation-footer li a:hover,
+  .support-menu ul li a:hover {
+    color: var(--secondary-color200);
+  }
+
+  .footer-credential {
+    text-align: center;
+    color: var(--neutral-color100);
+    margin-top: 2rem;
+  }
+
+  .footer-credential span {
+    font-size: 14px;
+  }
+
+  .footer-credential hr {
+    margin: 1.5rem 0;
+    border-color: var(--neutral-color300);
+  }
+}
