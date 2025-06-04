@@ -496,6 +496,71 @@ nav {
   text-align: center;
 }
 
+
+/* Section Trailer Baru */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8rem 5rem;
+}
+
+.trailer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.trailer-section .title-section {
+  background-color: var(--secondary-color200);
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--primary-color100);
+}
+
+.trailer-section .title-section h4 {
+  font-family: var(--font-sora);
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7rem;
+}
+
+.card-section .card-trailer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-section .card-trailer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-trailer .button-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: var(--secondary-color200);
+  border: 2px outset white; 
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease
+}
+
 /* Responsive Breakpoint (Kalian juga copy ini ya untuk responsive nya )*/
 @media screen and (max-width: 768px) {
   /* Navbar responsif style */
