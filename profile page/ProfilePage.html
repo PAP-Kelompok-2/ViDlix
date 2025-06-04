@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViDlix | Trending</title>
+    <link rel="shortcut icon" href="../src/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../src/style/ProfilePage.css" />
+    <!-- Pake ini juga untuk icon -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Navbar (Copy Navbar ini ya) -->
+    <nav class="navbar">
+      <div class="logo-link">
+        <a href="#">
+          <img src="../src/image/logoFirst.svg" alt="ViDlix" />
+        </a>
+        <ul>
+          <li><a href="" class="active">Home</a></li>
+          <li><a href="">Genre</a></li>
+          <li><a href="">Favorite</a></li>
+          <li><a href="">Subscription</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="button-nav">
+        <button class="login">Login</button>
+        <button class="signup">Sign Up</button>
+        <button class="hamburger" id="hamburger-btn">
+          <svg data-lucide="menu"></svg>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu">
+                <button class="close-btn" id="close-btn">
+                  <svg data-lucide="x"></svg>
+                </button>
+                <ul>
+                  <li><a href="" class="active">Home</a></li>
+                  <li><a href="">Genre</a></li>
+                  <li><a href="">Favorite</a></li>
+                  <li><a href="">Subscription</a></li>
+                  <li><a href="">Contact</a></li>
+                </ul>
+                <div class="button-sidebar">
+                  <button class="login">Login</button>
+                  <button class="signup">Sign Up</button>
+                </div>
+              </div>
+            </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <h2>Personal Information</h2>
+      <div class="profile-container">
+        <div class="profile-image">
+          <div class="circle"></div>
+          <a href="#" class="edit-profile">Edit Profile</a>
+        </div>
+        <div class="profile-form">
+          <label for="nama"><span class="label-line"></span>Nama</label>
+          <input type="text" id="nama" name="nama" />
+
+          <label for="email"><span class="label-line"></span>Email</label>
+          <input type="email" id="email" name="email" />
+
+          <label for="handphone"
+            ><span class="label-line"></span>Handphone</label
+          >
+          <input type="text" id="handphone" name="handphone" />
+        </div>
+      </div>
+    </section>
+
+ <!-- Footer -->
+ <footer class="footer">
+  <div class="footer-section">
+    <div class="section-info">
+      <div class="logo-footer">
+        <img src="../src/image/logoSecondary.svg" alt="Logo ViDlix" />
+      </div>
+      <div class="information-col">
+        <div class="information-item">
+          <svg data-lucide="map-pin"></svg>
+          <p>Universitas Brawijaya, Kota Malang, Jawa Timur</p>
+        </div>
+        <div class="information-item">
+          <svg data-lucide="mail"></svg>
+          <p>mydlixmov@gmail.com</p>
+        </div>
+        <div class="information-item">
+          <svg data-lucide="phone"></svg>
+          <p>+62 881 9010 9991</p>
+        </div>
+      </div>
+      <div class="socmed-col">
+        <div class="socmed-item">
+          <a href=""><svg data-lucide="twitter"></svg></a>
+        </div>
+        <div class="socmed-item">
+          <a href=""><svg data-lucide="youtube"></svg></a>
+        </div>
+        <div class="socmed-item">
+          <a href=""><svg data-lucide="facebook"></svg></a>
+        </div>
+        <div class="socmed-item">
+          <a href=""><svg data-lucide="instagram"></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="section-menu">
+      <div class="navigation-menu">
+        <div class="title-menu">
+          <h4>Navigation</h4>
+        </div>
+        <ul class="navigation-footer">
+          <li><a href="ProfilePage.html">Home</a></li>
+          <li><a href="ProfilePage.html">Genre</a></li>
+          <li><a href="ProfilePage.html">Favorite</a></li>
+          <li><a href="ProfilePage.html">Subscription</a></li>
+          <li><a href="ProfilePage.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="support-menu">
+        <div class="title-menu">
+          <h4>Support</h4>
+        </div>
+        <ul>
+          <li><a href="ProfilePage.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-credential">
+    <hr />
+    <span>Copyright 2025 - Kelompok 2 PAP</span>
+  </div>
+</footer>
+<script src="../src/script/scriptHome.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>
