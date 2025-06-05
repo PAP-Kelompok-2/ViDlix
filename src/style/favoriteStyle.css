@@ -351,7 +351,7 @@ main {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 32px;
 }
 @media (min-width: 640px) {
   .grid {
@@ -364,6 +364,13 @@ main {
   max-width: 350px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
 }
 
 .movie-image {
