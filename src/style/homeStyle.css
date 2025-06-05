@@ -464,60 +464,195 @@ nav {
 /* Slider */
 .slider-section {
   width: 100%;
-  overflow: hidden;
+  height: 600px;
+  overflow: visible;
   position: relative;
   margin-bottom: 2rem;
 }
 
-.slider-section img {
+#hero-slider-bg {
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+  height: 100%;
+  object-fit: fill; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  filter: brightness(0.5) contrast(1.1); 
+  transition: opacity 0.6s ease-in-out;
+}
+
+.slider-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  padding: 2rem 10rem;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75) 10%,
+    rgba(0, 0, 0, 0.45) 45%,
+    rgba(0, 0, 0, 0) 70%
+  );
 }
 
 .slider-content {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 15rem;
-  left: 9rem;
-  gap: 2rem;
+  color: white;
+  max-width: 80%;
+  animation: contentEntry 0.8s ease-out forwards;
+}
+
+@keyframes contentEntry {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .slider-label {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-sora);
   font-weight: 600;
-  font-size: 18px;
-  padding: 0.5rem 1.5rem;
-  border-radius: 10px;
-  background-color: #b20000;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background-color: var(--secondary-color200);
   color: white;
-  text-align: center;
+  align-self: flex-start;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
+.slider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 2000px;
+}
+
+.slider-info h2 {
+  font-family: var(--font-sora);
+  font-weight: 700;
+  font-size: 3.125rem;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.slider-info p {
+  font-family: var(--font-dm-sans);
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--neutral-color400);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 550px;
+}
+
+.slider-info .genre-label {
+  font-family: var(--font-dm-sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--neutral-color300);
+}
+
+#hero-slider-genre-text {
+  color: var(--neutral-color200);
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 3rem;
+  left: 10rem;
+  z-index: 3;
+  display: flex;
+  gap: 1rem;
+}
+
+.slider-nav-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.slider-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.slider-nav-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.main-hero-play-btn {
+  position: absolute;
+  bottom: 0;
+  right: 5rem;
+  transform: translateY(35%);
+  z-index: 20;
+  background-color: var(--secondary-color200);
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.main-hero-play-btn:hover {
+  background-color: var(--secondary-color100);
+  transform: translateY(35%) scale(1.1);
+}
+
+.main-hero-play-btn svg {
+  width: 28px;
+  height: 28px;
+  fill: white;
+}
 
 /* Section Trailer Baru */
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  padding: 8rem 5rem;
+  gap: 6rem;
+  padding: 4rem 5rem;
 }
 
 .trailer-section {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
 }
 
-.trailer-section .title-section {
-  background-color: var(--secondary-color200);
+.title-section {
   padding: 1.5rem 2rem;
-  border-left: 3px solid var(--primary-color100);
+  border-left: 3px solid var(--secondary-color100);
 }
 
-.trailer-section .title-section h4 {
+.title-section h4 {
   font-family: var(--font-sora);
   font-size: 2.25rem;
   font-weight: 600;
@@ -526,22 +661,21 @@ nav {
 .card-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 7rem;
+  gap: 5rem;
 }
 
-.card-section .card-trailer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  overflow: hidden;
+.card-trailer .poster-wrapper {
   position: relative;
+  width: 100%;
+  line-height: 0;
 }
 
-.card-section .card-trailer img {
+.card-trailer .poster-wrapper img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 300px;
+  object-fit: fill;
   border-radius: 10px;
+  display: block;
 }
 
 .card-trailer .button-play {
@@ -552,13 +686,123 @@ nav {
   width: 50px;
   height: 50px;
   background-color: var(--secondary-color200);
-  border: 2px outset white; 
+  border: 2px solid white;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background-color 0.3s ease
+  transition: background-color 0.3s ease;
+}
+
+.card-trailer .button-play svg {
+  color: white;
+  fill: white;
+  width: 24px;
+  height: 24px;
+}
+.card-trailer .info-wrapper {
+  padding-top: 0.75rem;
+  text-align: left;
+}
+
+.card-trailer .info-wrapper h3 {
+  font-family: var(--font-sora);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color100);
+  margin-bottom: 0.2rem;
+  line-height: 1.3;
+}
+
+.card-trailer .info-wrapper p {
+  font-family: var(--font-dm-sans);
+  font-size: 0.875rem;
+  color: var(--primary-color400);
+  line-height: 1.3;
+}
+
+
+
+/* Styling untuk Modal Video */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+  background-color: var(--primary-color200);
+  padding: 15px;
+  border-radius: 8px;
+  position: relative;
+  width: 90%;
+  max-width: 850px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-overlay.active .modal-content {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.modal-close-btn svg {
+  width: 22px;
+  height: 22px;
+  color: var(--primary-color200);
+}
+
+.video-iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  background-color: var(--neutral-color500);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.video-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Responsive Breakpoint (Kalian juga copy ini ya untuk responsive nya )*/
