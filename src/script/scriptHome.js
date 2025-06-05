@@ -1,4 +1,32 @@
+window.setPageTitle = function(pageName) {
+  document.title = `ViDlix | ${pageName}`;
+};
+
+// Fungsi untuk mengatur judul default berdasarkan nama file HTML
+function setDefaultPageTitle() {
+  const path = window.location.pathname;
+  const pageFileName = path.substring(path.lastIndexOf('/') + 1);
+
+  // Bersihkan nama file: hapus .html, ganti - jadi spasi
+  let pageName = pageFileName.replace('.html', '').replace(/-/g, ' ');
+
+  // Jika halaman root (index.html atau hanya "/") maka beri nama 'Home'
+  if (pageName === '' || pageName === 'index') {
+    pageName = 'Home';
+  } else {
+    // Ubah huruf pertama setiap kata menjadi besar (misal: 'about us' jadi 'About Us')
+    pageName = pageName.split(' ').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
+  }
+
+  // Panggil fungsi global yang sudah kita buat
+  setPageTitle(pageName);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+
+  setDefaultPageTitle();
 
   // Salin ini ya
   const hamburgerBtn = document.getElementById("hamburger-btn");
