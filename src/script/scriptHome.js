@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Salin ini ya
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const closeBtn = document.getElementById("close-btn");
@@ -21,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // Sampai sini
 
   const videoModal = document.getElementById("video-modal");
   const youtubeIframe = document.getElementById("youtube-video-iframe");
