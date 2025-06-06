@@ -1,25 +1,63 @@
-window.setPageTitle = function(pageName) {
+window.setPageTitle = function (pageName) {
   document.title = `ViDlix | ${pageName}`;
 };
 
 function setDefaultPageTitle() {
   const path = window.location.pathname;
-  const pageFileName = path.substring(path.lastIndexOf('/') + 1);
+  const pageFileName = path.substring(path.lastIndexOf("/") + 1);
+  let pageName = pageFileName.replace(".html", "").replace(/-/g, " ");
 
-  let pageName = pageFileName.replace('.html', '').replace(/-/g, ' ');
-
-  if (pageName === '' || pageName === 'index') {
-    pageName = 'Home';
+  if (pageName === "" || pageName === "index" || pageName === "home") {
+    pageName = "Home";
   } else {
-    pageName = pageName.split(' ').map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
+    pageName = pageName
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   }
   setPageTitle(pageName);
 }
 
+function handleActiveNav() {
+  const currentPath = window.location.pathname;
+  const navLinks = document.querySelectorAll(
+    ".navbar ul li a, .mobile-menu ul li a"
+  );
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+
+    const linkHref = link.getAttribute("href");
+    if (!linkHref) {
+      return;
+    }
+
+    const isCurrentUrlRoot =
+      currentPath === "/" || currentPath.endsWith("/index.html");
+
+    const isLinkToRoot =
+      linkHref === "index.html" ||
+      linkHref === "home.html" ||
+      linkHref === "./";
+
+    if (isCurrentUrlRoot && isLinkToRoot) {
+      link.classList.add("active");
+      return;
+    }
+
+    if (
+      currentPath.includes(linkHref) &&
+      linkHref !== "index.html" &&
+      linkHref !== ""
+    ) {
+      link.classList.add("active");
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setDefaultPageTitle();
+  handleActiveNav();
 
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -37,8 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mobileLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        mobileLinks.forEach((l) => l.classList.remove("active"));
-        link.classList.add("active");
         mobileMenu.classList.remove("active");
       });
     });
