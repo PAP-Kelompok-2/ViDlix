@@ -105,6 +105,40 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       if (heroSliderSection) heroSliderSection.style.display = "none";
     }
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const swipeThreshold = 50;
+    heroSliderSection.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+      },
+      { passive: true }
+    );
+
+    heroSliderSection.addEventListener(
+      "touchend",
+      (event) => {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipeGesture();
+      },
+      { passive: true }
+    );
+
+    function handleSwipeGesture() {
+      const swipeDistance = touchEndX - touchStartX;
+
+      if (Math.abs(swipeDistance) < swipeThreshold) {
+        return;
+      }
+
+      if (swipeDistance < 0) {
+        showNextSlide();
+      } else {
+        showPrevSlide();
+      }
+    }
   }
 
   function renderNewestMovies() {

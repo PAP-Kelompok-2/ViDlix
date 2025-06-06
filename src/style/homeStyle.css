@@ -433,3 +433,200 @@
   width: 14px;
   height: 14px;
 }
+
+.more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.more-btn button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--secondary-color200);
+  border: none;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.more-btn button svg {
+  margin-top: 2px;
+  width: 24px;
+}
+
+.more-btn button:hover {
+  background-color: var(--secondary-color100);
+}
+
+@media screen and (max-width: 992px) {
+  .slider-content-wrapper {
+    padding: 2rem 4rem;
+  }
+
+  .slider-info h2 {
+    font-size: 2.5rem;
+  }
+
+  .slider-info p {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+
+  .slider-controls {
+    left: 4rem;
+    bottom: 2.5rem;
+  }
+
+  .main-hero-play-btn {
+    width: 65px;
+    height: 65px;
+  }
+
+  .title-section h4 {
+    font-size: 2rem;
+  }
+  .card-section {
+    gap: 3rem;
+  }
+
+  .list-movie {
+    gap: 2rem;
+  }
+
+  .more-btn {
+    justify-content: center;
+  }
+
+  .more-btn button {
+    padding: 1.5rem 2rem;
+  }
+
+  .more-btn button svg {
+    margin-top: 2px;
+    width: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slider-section {
+    height: 70vh;
+    min-height: 400px;
+    max-height: 500px;
+    overflow: hidden;
+  }
+
+  .slider-content-wrapper {
+    padding: 2rem;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.85) 20%,
+      rgba(0, 0, 0, 0) 80%
+    );
+  }
+
+  .slider-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-bottom: 6rem;
+  }
+
+  #hero-slider-label {
+    align-self: center;
+  }
+
+  #hero-slider-description {
+    display: none;
+  }
+
+  .slider-info h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .slider-label {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .slider-controls {
+    display: none;
+  }
+
+  .main-hero-play-btn {
+    width: 60px;
+    height: 60px;
+    bottom: 2rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .main-hero-play-btn:hover {
+    transform: translateX(50%) scale(1.1);
+  }
+
+  .main-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .trailer-section .title-section h4 {
+    font-size: 1.75rem;
+  }
+  .card-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .newest-movie {
+    gap: 2rem;
+  }
+  .newest-movie .title-section h4 {
+    font-size: 1.75rem;
+  }
+  .list-movie {
+    gap: 1.5rem;
+  }
+  .card-movie-info h3 {
+    font-size: 1.1rem;
+  }
+  .info-meta {
+    font-size: 0.8rem;
+  }
+
+  .more-btn button {
+    padding: 1rem 2rem;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider-content-wrapper {
+    padding: 1.5rem;
+  }
+
+  .slider-info h2 {
+    font-size: 1.75rem;
+  }
+
+  .title-section {
+    padding: 1.25rem 1.5rem;
+  }
+  .title-section h4 {
+    font-size: 1.5rem;
+  }
+  .card-section {
+    gap: 2.5rem;
+  }
+}
