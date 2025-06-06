@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="shortcut icon" href="src/favicon.svg" type="image/x-icon" />
+    <!-- CSS nya pake dua ya -->
+    <link rel="stylesheet" href="src/style/global.css" />
+    <link rel="stylesheet" href="src/style/homeStyle.css" />
+    <!-- Pake ini juga untuk icon -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Navbar (Copy Navbar ini ya) -->
+    <nav class="navbar">
+      <div class="logo-link">
+        <a href="#">
+          <img src="src/image/logoFirst.svg" alt="ViDlix" />
+        </a>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="page/genre.html">Genre</a></li>
+          <li><a href="">Favorite</a></li>
+          <li><a href="">Subscription</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="button-nav">
+        <button class="login">Login</button>
+        <button class="signup">Sign Up</button>
+        <button class="hamburger" id="hamburger-btn">
+          <svg data-lucide="menu"></svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu sidebar -->
+      <div class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">
+          <svg data-lucide="x"></svg>
+        </button>
+        <ul>
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="genre.html">Genre</a></li>
+          <li><a href="">Favorite</a></li>
+          <li><a href="">Subscription</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+        <div class="button-sidebar">
+          <button class="login" type="button">Login</button>
+          <button class="signup" type="button">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Akhir Navbar -->
+
+    <section class="slider-section">
+      <img
+        id="hero-slider-bg"
+        src="src/image/film1.png"
+        alt="Hero background"
+      />
+
+      <div class="slider-content-wrapper">
+        <div class="slider-content">
+          <span class="slider-label" id="hero-slider-label"></span>
+          <div class="slider-info">
+            <h2 id="hero-slider-title"></h2>
+            <p id="hero-slider-description"></p>
+            <div class="genre-label">
+              Genre : <span id="hero-slider-genre-text"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-controls">
+        <button class="prev-btn slider-nav-button" id="hero-slider-prev-btn">
+          <svg data-lucide="step-back"></svg>
+        </button>
+        <button class="next-btn slider-nav-button" id="hero-slider-next-btn">
+          <svg data-lucide="step-forward"></svg>
+        </button>
+      </div>
+
+      <button class="play-btn main-hero-play-btn" id="hero-slider-play-btn">
+        <svg data-lucide="play"></svg>
+      </button>
+    </section>
+
+    <main class="main-content">
+      <!-- Section Trailer -->
+      <section class="trailer-section">
+        <div class="title-section">
+          <h4>Trailer Baru</h4>
+        </div>
+        <div class="card-section">
+          <div class="card-trailer" data-youtube-id="TcMBFSGVi1c">
+            <div class="poster-wrapper">
+              <img src="src/image/film1.png" alt="Avengers: Endgame Poster" />
+              <div class="button-play">
+                <svg data-lucide="play"></svg>
+              </div>
+            </div>
+            <div class="info-wrapper">
+              <h3>Avengers: Endgame</h3>
+              <p>2019</p>
+            </div>
+          </div>
+          <div class="card-trailer" data-youtube-id="shW9i6k8cB0">
+            <div class="poster-wrapper">
+              <img
+                src="https://m.media-amazon.com/images/S/pv-target-images/418f791d94eeeea9599373167f26de3334882d9e4b15ec503d597de98af99dbb.jpg"
+                alt="Spider-man: Across the Spider-Verse Poster"
+              />
+              <div class="button-play">
+                <svg data-lucide="play"></svg>
+              </div>
+            </div>
+            <div class="info-wrapper">
+              <h3>Spider-man : Across the Spider-Verse</h3>
+              <p>2023</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Film Terbaru -->
+      <section class="newest-movie">
+        <div class="title-section">
+          <h4>Film Terbaru dan Terpopuler</h4>
+        </div>
+        <div class="list-movie"></div>
+      </section>
+    </main>
+
+    <!-- Modal video youtube -->
+    <div id="video-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close-btn" aria-label="Tutup">
+          <svg data-lucide="x"></svg>
+        </button>
+        <div class="video-iframe-container">
+          <iframe
+            id="youtube-video-iframe"
+            width="560"
+            height="315"
+            src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer bisa kalian Copy disini ya -->
+    <footer class="footer">
+      <div class="footer-section">
+        <div class="section-info">
+          <div class="logo-footer">
+            <img src="src/image/logoSecondary.svg" alt="Logo ViDlix" />
+          </div>
+          <div class="information-col">
+            <div class="information-item">
+              <svg data-lucide="map-pin"></svg>
+              <p>Universitas Brawijaya, Kota Malang, Jawa Timur</p>
+            </div>
+            <div class="information-item">
+              <svg data-lucide="mail"></svg>
+              <p>mydlixmov@gmail.com</p>
+            </div>
+            <div class="information-item">
+              <svg data-lucide="phone"></svg>
+              <p>+62 881 9010 9991</p>
+            </div>
+          </div>
+          <div class="socmed-col">
+            <div class="socmed-item">
+              <a href=""><svg data-lucide="twitter"></svg></a>
+            </div>
+            <div class="socmed-item">
+              <a href=""><svg data-lucide="youtube"></svg></a>
+            </div>
+            <div class="socmed-item">
+              <a href=""><svg data-lucide="facebook"></svg></a>
+            </div>
+            <div class="socmed-item">
+              <a href=""><svg data-lucide="instagram"></svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="section-menu">
+          <div class="navigation-menu">
+            <div class="title-menu">
+              <h4>Navigation</h4>
+            </div>
+            <ul class="navigation-footer">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html">Genre</a></li>
+              <li><a href="home.html">Favorite</a></li>
+              <li><a href="home.html">Trending</a></li>
+            </ul>
+          </div>
+          <div class="support-menu">
+            <div class="title-menu">
+              <h4>Support</h4>
+            </div>
+            <ul>
+              <li><a href="home.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-credential">
+        <hr />
+        <span>Copyright 2025 - Kelompok 2 PAP</span>
+      </div>
+    </footer>
+    <!-- Gunakan ini juga -->
+    <script src="src/script/data.js"></script>
+    <script src="src/script/global.js"></script>
+    <script src="src/script/scriptHome.js"></script>
+    <script>
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    </script>
+  </body>
+</html>
