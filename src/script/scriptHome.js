@@ -1,144 +1,7 @@
-window.setPageTitle = function(pageName) {
-  document.title = `ViDlix | ${pageName}`;
-};
-
-// Fungsi untuk mengatur judul default berdasarkan nama file HTML
-function setDefaultPageTitle() {
-  const path = window.location.pathname;
-  const pageFileName = path.substring(path.lastIndexOf('/') + 1);
-
-  // Bersihkan nama file: hapus .html, ganti - jadi spasi
-  let pageName = pageFileName.replace('.html', '').replace(/-/g, ' ');
-
-  // Jika halaman root (index.html atau hanya "/") maka beri nama 'Home'
-  if (pageName === '' || pageName === 'index') {
-    pageName = 'Home';
-  } else {
-    // Ubah huruf pertama setiap kata menjadi besar (misal: 'about us' jadi 'About Us')
-    pageName = pageName.split(' ').map(word => 
-      word.charAt(0).toUpperCase() + word.slice(1)
-    ).join(' ');
-  }
-
-  // Panggil fungsi global yang sudah kita buat
-  setPageTitle(pageName);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-
-  setDefaultPageTitle();
-
-  // Salin ini ya
-  const hamburgerBtn = document.getElementById("hamburger-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const closeBtn = document.getElementById("close-btn");
-  const mobileLinks = document.querySelectorAll(".mobile-menu ul li a");
-
-  if (hamburgerBtn && mobileMenu && closeBtn) {
-    hamburgerBtn.addEventListener("click", () => {
-      mobileMenu.classList.add("active");
-    });
-
-    closeBtn.addEventListener("click", () => {
-      mobileMenu.classList.remove("active");
-    });
-
-    mobileLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileLinks.forEach((l) => l.classList.remove("active"));
-        link.classList.add("active");
-        mobileMenu.classList.remove("active");
-      });
-    });
-  }
-
-  // Sampai sini
-
-  const videoModal = document.getElementById("video-modal");
-  const youtubeIframe = document.getElementById("youtube-video-iframe");
-  const modalCloseBtn = videoModal
-    ? videoModal.querySelector(".modal-close-btn")
-    : null;
-
-  const playButtons = document.querySelectorAll(".card-trailer .button-play");
-
-  playButtons.forEach((button) => {
-    button.style.cursor = "pointer";
-    button.addEventListener("click", (event) => {
-      event.stopPropagation();
-      const card = button.closest(".card-trailer");
-      const youtubeId = card ? card.dataset.youtubeId : null;
-      if (youtubeId && videoModal && youtubeIframe) {
-        youtubeIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`;
-        videoModal.classList.add("active");
-      } else {
-        if (!card)
-          console.warn("Tombol play tidak berada di dalam .card-trailer");
-        if (!youtubeId)
-          console.warn("Tombol play ini tidak memiliki data-youtube-id:", card);
-        if (!videoModal) console.warn("Elemen modal video tidak ditemukan.");
-        if (!youtubeIframe)
-          console.warn("Elemen iframe video tidak ditemukan.");
-      }
-    });
-  });
-
-  function closeModal() {
-    if (videoModal && youtubeIframe) {
-      videoModal.classList.remove("active");
-      setTimeout(() => {
-        youtubeIframe.src = "";
-      }, 300);
-    }
-  }
-
-  if (modalCloseBtn) {
-    modalCloseBtn.addEventListener("click", closeModal);
-  }
-
-  if (videoModal) {
-    videoModal.addEventListener("click", (event) => {
-      if (event.target === videoModal) {
-        closeModal();
-      }
-    });
-  }
-
   const heroSliderSection = document.querySelector(".slider-section");
-
   if (heroSliderSection) {
-    const slideData = [
-      {
-        imgSrc:
-          "https://miro.medium.com/v2/resize:fit:1400/0*gmoNFDJEnzHEFzj5.jpg",
-        label: "Epic Sci-Fi",
-        title: "Dune: Part One",
-        description:
-          "Paul Atreides, pemuda brilian dan berbakat yang ditakdirkan untuk hal besar, harus melakukan perjalanan ke planet paling berbahaya di alam semesta demi masa depan keluarga dan rakyatnya.",
-        genreText: "Sci-fi, Adventure, Drama",
-        youtubeId: "n9xhJrPXop4",
-      },
-      {
-        imgSrc:
-          "https://cineverse.id/wp-content/uploads/2023/05/review-122-spider-man-across-the-spider-verse-6.jpg",
-        label: "Animasi Terbaik",
-        title: "Spider-Man: Across the Spider-Verse",
-        description:
-          "Miles Morales melintasi Multiverse, bertemu tim Spider-People yang bertugas melindungi keberadaannya. Ketika para pahlawan berselisih, Miles harus melawan para Spider lainnya.",
-        genreText: "Animation, Action, Adventure",
-        youtubeId: "shW9i6k8cB0",
-      },
-      {
-        imgSrc:
-          "https://image.tmdb.org/t/p/original/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg",
-        label: "Karya Kritis",
-        title: "Oppenheimer",
-        description:
-          "Kisah ilmuwan Amerika J. Robert Oppenheimer dan perannya yang monumental dalam pengembangan bom atom selama Perang Dunia II.",
-        genreText: "Biography, Drama, History",
-        youtubeId: "uYPbbksJxIg",
-      },
-    ];
+    const slideData = ALL_MOVIE_DATA.slice(0, 3);
 
     const bgImageEl = document.getElementById("hero-slider-bg");
     const labelEl = document.getElementById("hero-slider-label");
@@ -152,21 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
       heroSliderSection.querySelector(".slider-content");
 
     let currentSlideIndex = 0;
-    const maxSlides = 3;
-    const actualSlideCount = Math.min(slideData.length, maxSlides);
+    const actualSlideCount = slideData.length;
 
     function renderSlide(index) {
-      if (
-        !slideData[index] ||
-        !bgImageEl ||
-        !labelEl ||
-        !titleEl ||
-        !descriptionEl ||
-        !genreTextEl
-      ) {
-        return;
-      }
+      if (!slideData[index]) return;
+
       const data = slideData[index];
+      setPageTitle(data.title);
 
       if (sliderTextContentEl) {
         sliderTextContentEl.style.animation = "none";
@@ -181,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (bgImageEl) {
         bgImageEl.style.opacity = 0.3;
         setTimeout(() => {
-          bgImageEl.src = data.imgSrc;
+          bgImageEl.src = data.backdropSrc;
           bgImageEl.alt = data.title + " background";
           bgImageEl.style.opacity = 1;
         }, 200);
@@ -190,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       labelEl.textContent = data.label;
       titleEl.textContent = data.title;
       descriptionEl.textContent = data.description;
-      genreTextEl.textContent = data.genreText;
+      genreTextEl.textContent = data.genres.join(", ");
 
       if (mainPlayBtn) {
         mainPlayBtn.dataset.currentYoutubeId = data.youtubeId;
@@ -224,12 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (mainPlayBtn) {
         mainPlayBtn.addEventListener("click", () => {
           const youtubeId = mainPlayBtn.dataset.currentYoutubeId;
+          const videoModal = document.getElementById("video-modal");
+          const youtubeIframe = document.getElementById("youtube-video-iframe");
           if (youtubeId && videoModal && youtubeIframe) {
             youtubeIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`;
             videoModal.classList.add("active");
-          } else {
-            if (!youtubeId)
-              console.warn("ID YouTube untuk slide ini tidak ditemukan.");
           }
         });
       }
