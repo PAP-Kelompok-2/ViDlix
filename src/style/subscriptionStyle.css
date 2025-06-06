@@ -357,7 +357,6 @@ nav {
   }
 }
 
-/* Info Box */
 .info-box {
   max-width: 640px;
   margin: 2rem auto 0 auto;
@@ -393,7 +392,6 @@ nav {
   }
 }
 
-/* Plans Section Vertical */
 .plans {
   max-width: 640px;
   margin: 2rem auto 3rem auto;
@@ -407,6 +405,11 @@ nav {
   border: 1px solid var(--secondary-color200);
   border-radius: 0.4rem;
   padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .plan-card h3 {
