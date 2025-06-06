@@ -1,4 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const videoModal = document.getElementById("video-modal");
+  const youtubeIframe = document.getElementById("youtube-video-iframe");
+
+  const playButtons = document.querySelectorAll(".card-trailer .button-play");
+  playButtons.forEach((button) => {
+    button.style.cursor = "pointer";
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const card = button.closest(".card-trailer");
+      const youtubeId = card ? card.dataset.youtubeId : null;
+      if (youtubeId && videoModal && youtubeIframe) {
+        youtubeIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`;
+        videoModal.classList.add("active");
+      }
+    });
+  });
+
   const heroSliderSection = document.querySelector(".slider-section");
   if (heroSliderSection) {
     const slideData = ALL_MOVIE_DATA.slice(0, 3);
@@ -79,8 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (mainPlayBtn) {
         mainPlayBtn.addEventListener("click", () => {
           const youtubeId = mainPlayBtn.dataset.currentYoutubeId;
-          const videoModal = document.getElementById("video-modal");
-          const youtubeIframe = document.getElementById("youtube-video-iframe");
           if (youtubeId && videoModal && youtubeIframe) {
             youtubeIframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`;
             videoModal.classList.add("active");
@@ -91,4 +106,59 @@ document.addEventListener("DOMContentLoaded", () => {
       if (heroSliderSection) heroSliderSection.style.display = "none";
     }
   }
+
+  function renderNewestMovies() {
+    const listMovieContainer = document.querySelector(".list-movie");
+    if (!listMovieContainer) return;
+
+    const moviesToRender = ALL_MOVIE_DATA.filter(
+      (movie) => movie.isNewRelease || movie.isTrending
+    ).slice(0, 6);
+
+    listMovieContainer.innerHTML = "";
+
+    moviesToRender.forEach((movie) => {
+      const movieCardHTML = `
+      <a href="page/detail-dummy.html?id=${movie.id}" class="card-movie-link">
+        <div class="card-movie">
+          <img src="${movie.posterSrc}" alt="${movie.title} Poster">
+          
+          <button class="favorite-btn" data-movie-id="${
+            movie.id
+          }" aria-label="Add to favorites">
+            <svg data-lucide="heart"></svg>
+          </button>
+          
+          <div class="card-movie-info">
+            <h3>${movie.title} (${movie.year})</h3>
+            <div class="info-meta">
+              <span class="genres">${movie.genres.join(", ")}</span>
+              <span class="duration">
+                <svg data-lucide="clock-5"></svg> 
+                ${movie.duration}
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+    `;
+      listMovieContainer.innerHTML += movieCardHTML;
+    });
+
+    lucide.createIcons();
+    addFavoriteButtonListeners();
+  }
+
+  function addFavoriteButtonListeners() {
+    const favoriteButtons = document.querySelectorAll(".favorite-btn");
+    favoriteButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        button.classList.toggle("favorited");
+      });
+    });
+  }
+
+  renderNewestMovies();
 });
