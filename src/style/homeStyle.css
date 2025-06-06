@@ -488,6 +488,11 @@
     height: 65px;
   }
 
+  .trailer-section .card-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
   .title-section h4 {
     font-size: 2rem;
   }
@@ -596,8 +601,41 @@
     transform: translateX(50%) scale(1.1);
   }
 
+  .trailer-section {
+    gap: 1.5rem;
+  }
+  .trailer-section .card-section {
+    grid-template-columns: 1fr; /* Jadi 1 kolom di mobile */
+    gap: 1rem;
+  }
+
+  .card-trailer .poster-wrapper {
+    aspect-ratio: 16 / 9; /* Rasio widescreen, cocok untuk trailer */
+  }
+
+  .card-trailer .poster-wrapper img {
+    height: 100%; /* Biarkan gambar mengisi wrapper yang sudah punya aspect-ratio */
+  }
+
+  .card-trailer .info-wrapper h3 {
+    font-size: 1.2rem;
+  }
+  .card-trailer .info-wrapper p {
+    font-size: 0.9rem;
+    display: block;
+  }
+  .card-trailer .button-play {
+    width: 55px;
+    height: 55px;
+  }
+  .card-trailer .button-play svg {
+    width: 24px;
+    height: 24px;
+  }
+
   .main-content {
     padding: 2rem 1.5rem;
+    gap: 1.5rem;
   }
 
   .card-section {
