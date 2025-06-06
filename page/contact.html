@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ViDlix | Profile</title>
-    <link rel="shortcut icon" href="../src/favicon-vidlix.svg" type="image/x-icon" />
-    <link rel="stylesheet" href="../src/style/global.css" />
-    <link rel="stylesheet" href="../src/style/profileStyle.css" />
+    <title>ViDlix</title>
+    <link rel="shortcut icon" href="../src/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../src/style/contactStyle.css" />
     <!-- Pake ini juga untuk icon -->
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
@@ -15,7 +14,7 @@
     <nav class="navbar">
       <div class="logo-link">
         <a href="#">
-          <img src="../src/image/logoFirst.svg" alt="ViDlix" />
+          <img src="/src/image/logoFirst.svg" alt="ViDlix" />
         </a>
         <ul>
           <li><a href="../index.html">Home</a></li>
@@ -34,16 +33,17 @@
         </button>
       </div>
 
+      <!-- Mobile menu sidebar -->
       <div class="mobile-menu" id="mobile-menu">
         <button class="close-btn" id="close-btn">
           <svg data-lucide="x"></svg>
         </button>
         <ul>
-          <li><a href="../index.html" class="active">Home</a></li>
-          <li><a href="genre.html">Genre</a></li>
+          <li><a href="">Home</a></li>
+          <li><a href="">Genre</a></li>
           <li><a href="">Favorite</a></li>
           <li><a href="">Subscription</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="" class="active">Contact</a></li>
         </ul>
         <div class="button-sidebar">
           <button class="login">Login</button>
@@ -52,30 +52,7 @@
       </div>
     </nav>
 
-    <!-- Profile Section -->
-    <section class="profile-section">
-      <h2>Personal Information</h2>
-      <div class="profile-container">
-        <div class="profile-image">
-          <div class="circle"></div>
-          <a href="#" class="edit-profile">Edit Profile</a>
-        </div>
-        <div class="profile-form">
-          <label for="nama"><span class="label-line"></span>Nama</label>
-          <input type="text" id="nama" name="nama" />
-
-          <label for="email"><span class="label-line"></span>Email</label>
-          <input type="email" id="email" name="email" />
-
-          <label for="handphone"
-            ><span class="label-line"></span>Handphone</label
-          >
-          <input type="text" id="handphone" name="handphone" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
+            <!-- Footer bisa kalian Copy disini ya -->
     <footer class="footer">
       <div class="footer-section">
         <div class="section-info">
@@ -117,11 +94,11 @@
               <h4>Navigation</h4>
             </div>
             <ul class="navigation-footer">
-              <li><a href="ProfilePage.html">Home</a></li>
-              <li><a href="ProfilePage.html">Genre</a></li>
-              <li><a href="ProfilePage.html">Favorite</a></li>
-              <li><a href="ProfilePage.html">Subscription</a></li>
-              <li><a href="ProfilePage.html">Contact</a></li>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html">Genre</a></li>
+              <li><a href="home.html">Favorite</a></li>
+              <li><a href="home.html">Subscription</a></li>
+              <li><a href="home.html">Contact</a></li>
             </ul>
           </div>
           <div class="support-menu">
@@ -129,7 +106,7 @@
               <h4>Support</h4>
             </div>
             <ul>
-              <li><a href="ProfilePage.html">Contact</a></li>
+              <li><a href="home.html">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -140,7 +117,7 @@
       </div>
     </footer>
     <script src="../src/script/global.js"></script>
-    <script src="../src/script/scriptProfile.js"></script>
+    <script src="../src/script/scriptHome.js"></script>
     <script>
       lucide.createIcons();
     </script>

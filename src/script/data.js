@@ -33,7 +33,7 @@ const ALL_MOVIE_DATA = [
     director: "Joaquim Dos Santos",
     cast: ["Shameik Moore", "Hailee Steinfeld", "Oscar Isaac"],
     posterSrc:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tGw-DSuQFT3GSAl-cGSbm1LhQ6EOkGWdiA&s",
+      "https://www.movieposters.com/cdn/shop/files/spider-man-across-the-spider-verse_tsm61wbo.jpg?v=1684521170",
     backdropSrc:
       "https://m.media-amazon.com/images/S/pv-target-images/418f791d94eeeea9599373167f26de3334882d9e4b15ec503d597de98af99dbb.jpg",
     youtubeId: "shW9i6k8cB0",
@@ -53,7 +53,7 @@ const ALL_MOVIE_DATA = [
     director: "Christopher Nolan",
     cast: ["Cillian Murphy", "Emily Blunt", "Matt Damon"],
     posterSrc:
-      "https://upload.wikimedia.org/wikipedia/id/4/4a/Oppenheimer_%28film%29.jpg",
+      "https://cinemags.org/?attachment_id=195382",
     backdropSrc:
       "https://image.tmdb.org/t/p/original/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg",
     youtubeId: "uYPbbksJxIg",
@@ -73,7 +73,7 @@ const ALL_MOVIE_DATA = [
     director: "Anthony & Joe Russo",
     cast: ["Robert Downey Jr.", "Chris Evans", "Mark Ruffalo"],
     posterSrc:
-      "https://upload.wikimedia.org/wikipedia/id/0/0d/Avengers_Endgame_poster.jpg",
+      "https://images-cdn.ubuy.co.id/634ffe4b05d16a708944a5ec-avengers-endgame-movie-poster-2-sided.jpg",
     backdropSrc:
       "https://image.tmdb.org/t/p/original/hP2i2C3s1aD2yfg3d2Uv3h2w2gC.jpg",
     youtubeId: "TcMBFSGVi1c",
@@ -92,7 +92,7 @@ const ALL_MOVIE_DATA = [
     genres: ["Drama", "Action", "Crime", "Thriller"],
     director: "Christopher Nolan",
     cast: ["Christian Bale", "Heath Ledger", "Aaron Eckhart"],
-    posterSrc: "https://upload.wikimedia.org/wikipedia/id/8/8a/Dark_Knight.jpg",
+    posterSrc: "https://i.pinimg.com/736x/ea/a2/6e/eaa26e2c3bfa234c3cdd3c4d9fabad35.jpg",
     backdropSrc:
       "https://reformasi.co.id/wp-content/uploads/2024/12/batman-begins-the-dark-knight.webp",
     youtubeId: "EXeTwQWrcwY",
@@ -132,7 +132,7 @@ const ALL_MOVIE_DATA = [
     director: "Bong Joon Ho",
     cast: ["Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong"],
     posterSrc:
-      "https://upload.wikimedia.org/wikipedia/en/5/53/Parasite_%282019_film%29.png",
+      "https://tabloidnyata.com/wp-content/uploads/2020/02/poster-film-parasite-2019-scaled.jpg",
     backdropSrc:
       "https://mmc.tirto.id/image/otf/640x0/2019/06/24/paraaasiteee-imdb_ratio-16x9.jpg",
     youtubeId: "5xH0HfJHsaY",
