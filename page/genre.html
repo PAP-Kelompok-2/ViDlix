@@ -19,7 +19,7 @@
     <!-- Navbar (Copy Navbar ini ya) -->
     <nav class="navbar">
       <div class="logo-link">
-        <a href="index.html">
+        <a href="../index.html">
           <img src="../src/image/logoFirst.svg" alt="ViDlix" />
         </a>
         <ul>
@@ -27,7 +27,16 @@
           <li><a href="genre.html">Genre</a></li>
           <li><a href="favorite.html">Favorite</a></li>
           <li><a href="subscription.html">Subscription</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown-container">
+            <a href="#" class="dropdown-toggle">
+              About
+              <svg data-lucide="chevron-down" class="dropdown-arrow"></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
 
@@ -39,17 +48,28 @@
         </button>
       </div>
 
-      <!-- Mobile menu sidebar -->
       <div class="mobile-menu" id="mobile-menu">
         <button class="close-btn" id="close-btn">
           <svg data-lucide="x"></svg>
         </button>
         <ul>
-          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="genre.html">Genre</a></li>
-          <li><a href="">Favorite</a></li>
-          <li><a href="">Subscription</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="favorite.html">Favorite</a></li>
+          <li><a href="subscription.html">Subscription</a></li>
+          <li class="dropdown-container-mobile">
+            <a href="#" class="dropdown-toggle-mobile">
+              <span>About</span>
+              <svg
+                data-lucide="chevron-down"
+                class="dropdown-arrow-mobile"
+              ></svg>
+            </a>
+            <ul class="dropdown-menu-mobile">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
         </ul>
         <div class="button-sidebar">
           <button class="login" type="button">Login</button>
@@ -61,7 +81,30 @@
     <!-- Akhir Navbar -->
 
     <main class="main-section">
-      
+      <div class="title-section">
+        <h4>Genre</h4>
+        <span class="line-title"></span>
+      </div>
+      <div class="genre-list">
+        <button>Action</button>
+        <button>Adventure</button>
+        <button>Animation</button>
+        <button>Comedy</button>
+        <button>Crime</button>
+        <button>Documentary</button>
+        <button>Drama</button>
+        <button>Family</button>
+        <button>Fantasy</button>
+        <button>History</button>
+        <button>Horror</button>
+        <button>Musical</button>
+        <button>Mystery</button>
+        <button>Romance</button>
+        <button>Sci-Fi</button>
+        <button>Thriller</button>
+        <button>War</button>
+        <button>Western</button>
+      </div>
     </main>
 
     <!-- Footer bisa kalian Copy disini ya -->
