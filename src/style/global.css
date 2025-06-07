@@ -46,7 +46,7 @@ nav {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 0.1rem 5rem;
+  padding: 0 5rem; /* Atur padding vertikal navbar di sini */
   gap: 2rem;
   align-items: center;
   box-shadow: 0px 2px 8px 0px rgba(107, 107, 107, 0.57);
@@ -57,49 +57,43 @@ nav {
   gap: 4.5rem;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
-.logo-link ul {
+.logo-link > ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
-.logo-link ul li a {
+.logo-link > ul > li {
   position: relative;
+  padding: 1.5rem 0;
+}
+
+.logo-link > ul > li > a {
   text-decoration: none;
   color: var(--primary-color100);
   font-family: var(--font-dm-sans);
   font-size: 20px;
   font-weight: 400;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.logo-link ul li a.active {
+.logo-link > ul > li > a.active {
   font-weight: 600;
 }
 
-.logo-link ul li a.active::after {
+.logo-link > ul > li:not(.dropdown-container) > a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2.6rem;
-  width: 100%;
-  height: 4px;
-  background-color: var(--secondary-color200);
-  border-radius: 10px;
-  transform: scaleX(1);
-  transform-origin: center;
-}
-
-.logo-link ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2.6rem;
+  bottom: -14px;
   width: 100%;
   height: 4px;
   background-color: var(--secondary-color200);
@@ -109,8 +103,78 @@ nav {
   transition: transform 0.3s ease;
 }
 
-.logo-link ul li a:hover::after {
+.logo-link > ul > li:not(.dropdown-container) > a:hover::after,
+.logo-link > ul > li:not(.dropdown-container) > a.active::after {
   transform: scaleX(1);
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-container:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  list-style-type: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease-out;
+  z-index: 1000;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  top: 90%;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--primary-color200);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-menu li a:hover {
+  color: var(--primary-color100);
+}
+
+.dropdown-menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 70%;
+  height: 3px;
+  background-color: var(--secondary-color200);
+  transition: left 0.3s ease-in-out;
+}
+
+.dropdown-menu li a:hover::after {
+  left: 24px;
 }
 
 .button-nav {
@@ -209,12 +273,11 @@ nav {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
 }
 
 .mobile-menu ul li a {
-  position: relative;
   text-decoration: none;
   color: white;
   font-size: 18px;
@@ -223,27 +286,45 @@ nav {
   display: block;
 }
 
-.mobile-menu ul li a.active {
-  font-weight: 600;
-}
-
-.mobile-menu ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.4rem;
+.mobile-menu .dropdown-container-mobile {
   width: 100%;
-  height: 3px;
-  background-color: var(--secondary-color200);
-  border-radius: 10px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
 }
 
-.mobile-menu ul li a:hover::after,
-.mobile-menu ul li a.active::after {
-  transform: scaleX(1);
+.mobile-menu .dropdown-toggle-mobile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.mobile-menu .dropdown-arrow-mobile {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.4s ease;
+}
+
+.mobile-menu .dropdown-container-mobile.open .dropdown-arrow-mobile {
+  transform: rotate(180deg);
+}
+
+.mobile-menu .dropdown-menu-mobile {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0 0 1rem;
+  background-color: var(--primary-color100);
+  border-radius: 6px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+
+.mobile-menu .dropdown-container-mobile.open .dropdown-menu-mobile {
+  max-height: 200px;
+}
+
+.mobile-menu .dropdown-menu-mobile li a {
+  padding: 0.2rem 1rem;
+  font-size: 16px;
 }
 
 .mobile-menu .button-sidebar {
@@ -477,7 +558,7 @@ nav {
   position: relative;
   width: 90%;
   max-width: 850px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
   transform: scale(0.9);
   transition: transform 0.3s ease-in-out;
 }
@@ -499,7 +580,7 @@ nav {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1001;
 }
 
@@ -528,7 +609,6 @@ nav {
   border: none;
 }
 
-
 /* Responsive Breakpoints (Global Elements Only) */
 @media screen and (max-width: 992px) {
   /* Navbar responsif style */
@@ -550,6 +630,53 @@ nav {
   }
   .hamburger {
     display: block;
+  }
+
+  .dropdown-container-mobile {
+    width: 100%;
+  }
+
+  .dropdown-toggle-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .dropdown-arrow-mobile {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.4s ease;
+  }
+
+  .dropdown-container-mobile.open .dropdown-arrow-mobile {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu-mobile {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0 0 1rem;
+    background-color: var(--primary-color200);
+    border-radius: 6px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  .dropdown-container-mobile.open .dropdown-menu-mobile {
+    max-height: 200px;
+  }
+
+  .dropdown-menu-mobile li a {
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+    display: block;
+  }
+
+  .dropdown-menu-mobile li a::after {
+    content: none;
   }
 
   /* Footer mobile style */
@@ -576,6 +703,7 @@ nav {
   .information-item {
     gap: 0.8rem;
     justify-content: center;
+    align-items: flex-start;
   }
   .information-item p {
     text-align: center;

@@ -14,15 +14,24 @@
     <!-- Navbar (Copy Navbar ini ya) -->
     <nav class="navbar">
       <div class="logo-link">
-        <a href="#">
-          <img src="/src/image/logoFirst.svg" alt="ViDlix" />
+        <a href="../index.html">
+          <img src="../src/image/logoFirst.svg" alt="ViDlix" />
         </a>
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li><a href="genre.html">Genre</a></li>
           <li><a href="favorite.html">Favorite</a></li>
           <li><a href="subscription.html">Subscription</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown-container">
+            <a href="#" class="dropdown-toggle">
+              About
+              <svg data-lucide="chevron-down" class="dropdown-arrow"></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
 
@@ -34,21 +43,32 @@
         </button>
       </div>
 
-      <!-- Mobile menu sidebar -->
       <div class="mobile-menu" id="mobile-menu">
         <button class="close-btn" id="close-btn">
           <svg data-lucide="x"></svg>
         </button>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Genre</a></li>
-          <li><a href="">Favorite</a></li>
-          <li><a href="" class="active">Subscription</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="genre.html">Genre</a></li>
+          <li><a href="favorite.html">Favorite</a></li>
+          <li><a href="subscription.html">Subscription</a></li>
+          <li class="dropdown-container-mobile">
+            <a href="#" class="dropdown-toggle-mobile">
+              <span>About</span>
+              <svg
+                data-lucide="chevron-down"
+                class="dropdown-arrow-mobile"
+              ></svg>
+            </a>
+            <ul class="dropdown-menu-mobile">
+              <li><a href="about-us.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
         </ul>
         <div class="button-sidebar">
-          <button class="login">Login</button>
-          <button class="signup">Sign Up</button>
+          <button class="login" type="button">Login</button>
+          <button class="signup" type="button">Sign Up</button>
         </div>
       </div>
     </nav>
@@ -232,7 +252,6 @@
       </div>
     </footer>
     <script src="../src/script/global.js"></script>
-    <script src="../src/script/scriptHome.js"></script>
     <script>
       lucide.createIcons();
     </script>
