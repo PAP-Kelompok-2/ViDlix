@@ -11,7 +11,7 @@
     />
     <!-- CSS nya pake dua ya -->
     <link rel="stylesheet" href="../src/style/global.css" />
-    <link rel="stylesheet" href="../src/style/genreStyle.css" />
+    <link rel="stylesheet" href="../src/style/genreDetailStyle.css" />
     <!-- Pake ini juga untuk icon -->
     <script src="https://unpkg.com/lucide@latest"></script>
   </head>
@@ -81,29 +81,39 @@
     <!-- Akhir Navbar -->
 
     <main class="main-section">
-      <div class="title-section">
-        <h4>Genre</h4>
-        <span class="line-title"></span>
-      </div>
       <div class="genre-list">
-        <button>Action</button>
-        <button>Adventure</button>
-        <button>Animation</button>
-        <button>Comedy</button>
-        <button>Crime</button>
-        <button>Documentary</button>
-        <button>Drama</button>
-        <button>Family</button>
-        <button>Fantasy</button>
-        <button>History</button>
-        <button>Horror</button>
-        <button>Musical</button>
-        <button>Mystery</button>
-        <button>Romance</button>
-        <button>Sci-Fi</button>
-        <button>Thriller</button>
-        <button>War</button>
-        <button>Western</button>
+        <div class="title-page">
+            <h4>Genre : <span>Action</span></h4>
+            <div class="search-form">
+                <button type="submit"><svg data-lucide="search"></svg></button>
+                <input type="text" placeholder="Search Movie">
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card-movie">
+                <div class="image-card">
+                    <img src="https://images-cdn.ubuy.co.id/634ffe4b05d16a708944a5ec-avengers-endgame-movie-poster-2-sided.jpg" alt="poster endgame">
+                </div>
+                <div class="card-content">
+                    <h4>Avengers: Endgame</h4>
+                    <span>2019 | Action, Adventure, Sci-fi</span>
+                    <div class="rating">
+                        <svg data-lucide="star"></svg>
+                        <span>8.5</span>
+                    </div>
+                    <div class="duration">
+                        <svg data-lucide="clock-5"></svg>
+                        <span>2h 29m</span>
+                    </div>
+                    <div class="description-movie">
+                        <p>Melanjutkan Avengers Infinity War, dimana kejadian setelah Thanos berhasil mendapatkan semua infinity stones dan memusnahkan 50% semua mahluk hidup di alam semesta. Akankah para Avengers berhasil mengalahkan Thanos?.</p>
+                    </div>
+                    <a href="detail-movie.html">
+                        Tonton Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
       </div>
     </main>
 
