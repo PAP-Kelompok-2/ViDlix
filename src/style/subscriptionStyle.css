@@ -56,7 +56,7 @@
 }
 
 .btn-red {
-  background-color: var(--secondary-color100);
+  background-color: var(--secondary-color200);
   color: white;
   font-weight: 600;
   font-size: 0.75rem;
@@ -68,7 +68,7 @@
 }
 
 .btn-red:hover {
-  background-color: var(--secondary-color200);
+  background-color: var(--secondary-color100);
 }
 
 @media (min-width: 640px) {
@@ -201,7 +201,7 @@
 }
 
 .plan-card button {
-  background-color: var(--secondary-color100);
+  background-color: var(--secondary-color200);
   color: white;
   font-weight: 600;
   font-size: 0.875rem;
@@ -214,7 +214,7 @@
 }
 
 .plan-card button:hover {
-  background-color: var(--secondary-color200);
+  background-color: var(--secondary-color100);
 }
 
 .plan-card p.cancel {
