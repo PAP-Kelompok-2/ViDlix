@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ViDlix</title>
+    <link rel="shortcut icon" href="../src/favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../src/style/global.css" />
+    <link rel="stylesheet" href="../src/style/contactStyle.css" />
+    <!-- Pake ini juga untuk icon -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <!-- Navbar (Copy Navbar ini ya) -->
+    <nav class="navbar">
+      <div class="logo-link">
+        <a href="#">
+          <img src="/src/image/logoFirst.svg" alt="ViDlix" />
+        </a>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="genre.html">Genre</a></li>
+          <li><a href="favorite.html">Favorite</a></li>
+          <li><a href="subscription.html">Subscription</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="button-nav">
+        <button class="login">Login</button>
+        <button class="signup">Sign Up</button>
+        <button class="hamburger" id="hamburger-btn">
+          <svg data-lucide="menu"></svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu sidebar -->
+      <div class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">
+          <svg data-lucide="x"></svg>
+        </button>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Genre</a></li>
+          <li><a href="">Favorite</a></li>
+          <li><a href="">Subscription</a></li>
+          <li><a href="" class="active">Contact</a></li>
+        </ul>
+        <div class="button-sidebar">
+          <button class="login">Login</button>
+          <button class="signup">Sign Up</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Contact -->
+    <main role="main">
+    <form action="#" method="POST" autocomplete="off" novalidate>
+      <h2>CONTACT US</h2>
+      <div class="form-group">
+        <label for="fullname"><span></span>Full Name</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Full Name" />
+      </div>
+      <div class="form-group">
+        <label for="email"><span></span>Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" />
+      </div>
+      <div class="form-group">
+        <label for="phone"><span></span>Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone" />
+      </div>
+      <div class="form-group">
+        <label for="message"><span></span>Message</label>
+        <textarea id="message" name="message" placeholder="Message" rows="4"></textarea>
+      </div>
+      <button class="buttoncontact" type="submit" aria-label="Submit contact form">Submit</button>
+    </form>
+    <div class="right-side" aria-label="Contact information and social media">
+      <img
+        src="/src/image/backgroundforcontact.svg"
+        alt="Image with various movie poster"
+        loading="lazy"
+        class="background-image"
+      />
+      <div class="contact-card">
+        <h3>FIND US</h3>
+        <div class="social-list">
+          <div class="social-item">
+            <div class="icon-circle" aria-hidden="true">
+              <img src="/src/image/yt icon.svg" alt="YouTube logo" />
+            </div>
+            <span>ViDlix</span>
+          </div>
+          <div class="social-item">
+            <div class="icon-circle" aria-hidden="true">
+              <img src="/src/image/ig icon.svg" alt="Instagram logo" />
+            </div>
+            <span>ViDlix_id</span>
+          </div>
+          <div class="social-item">
+            <div class="icon-circle" aria-hidden="true">
+              <img src="/src/image/x icon.svg" alt="X (Twitter) logo" />
+            </div>
+            <span>ViDlixid</span>
+          </div>
+        </div>
+        <p class="contact-email">mydlixmov@gmail.com<br />Malang, ID</p>
+      </div>
+    </div>
+  </main>
+
+    <!-- Footer bisa kalian Copy disini ya -->
+    <footer class="footer">
+      <div class="footer-section">
+        <div class="section-info">
+          <div class="logo-footer">
+            <img src="../src/image/logoSecondary.svg" alt="Logo ViDlix" />
+          </div>
+          <div class="information-col">
+            <div class="information-item">
+              <svg data-lucide="map-pin"></svg>
+              <p>Universitas Brawijaya, Kota Malang, Jawa Timur</p>
+            </div>
+            <div class="information-item">
+              <svg data-lucide="mail"></svg>
+              <p>mydlixmov@gmail.com</p>
+            </div>
+            <div class="information-item">
+              <svg data-lucide="phone"></svg>
+              <p>+62 881 9010 9991</p>
+            </div>
+          </div>
+          <div class="socmed-col">
+            <div class="socmed-item">
+              <a href=""><svg data-lucide="twitter"></svg></a>
+            </div>
+            <div class="socmed-item">
+              <a href=""><svg data-lucide="youtube"></svg></a>
+            </div>
+            <div class="socmed-item">
+              <a href=""><svg data-lucide="facebook"></svg></a>
+            </div>
+            <div class="socmed-item">
+              <a href=""><svg data-lucide="instagram"></svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="section-menu">
+          <div class="navigation-menu">
+            <div class="title-menu">
+              <h4>Navigation</h4>
+            </div>
+            <ul class="navigation-footer">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="home.html">Genre</a></li>
+              <li><a href="home.html">Favorite</a></li>
+              <li><a href="home.html">Subscription</a></li>
+              <li><a href="home.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="support-menu">
+            <div class="title-menu">
+              <h4>Support</h4>
+            </div>
+            <ul>
+              <li><a href="home.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-credential">
+        <hr />
+        <span>Copyright 2025 - Kelompok 2 PAP</span>
+      </div>
+    </footer>
+    <script src="../src/script/global.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
