@@ -442,7 +442,7 @@ nav {
 .footer-section {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   gap: 2rem;
 }
@@ -559,6 +559,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  align-items: center;
 }
 
 .navigation-footer li a,
