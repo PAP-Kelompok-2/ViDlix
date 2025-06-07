@@ -53,14 +53,60 @@ function handleActiveNav() {
   });
 }
 
+function checkLoginStatus() {
+  const userJSON = localStorage.getItem("loggedInUser");
+  if (userJSON) {
+    const user = JSON.parse(userJSON);
+    updateNavbarForLoggedInUser(user);
+  }
+}
+
+function updateNavbarForLoggedInUser(user) {
+  const desktopNavContainer = document.querySelector(".navbar .button-nav");
+  const mobileNavContainer = document.querySelector(
+    ".mobile-menu .button-sidebar"
+  );
+
+  const profileButtonHTML = `
+    <a href="/page/profile.html" class="profile-btn">
+      <svg data-lucide="user"></svg>
+      <span>Profile</span>
+    </a>
+  `;
+
+  if (desktopNavContainer) {
+    const loginBtn = desktopNavContainer.querySelector(".login");
+    const signupBtn = desktopNavContainer.querySelector(".signup");
+    if (loginBtn) loginBtn.style.display = "none";
+    if (signupBtn) signupBtn.style.display = "none";
+
+    if (!desktopNavContainer.querySelector(".profile-btn")) {
+      const hamburgerBtn = desktopNavContainer.querySelector(".hamburger");
+      desktopNavContainer.insertBefore(
+        document.createRange().createContextualFragment(profileButtonHTML),
+        hamburgerBtn
+      );
+    }
+  }
+
+  if (mobileNavContainer) {
+    mobileNavContainer.innerHTML = profileButtonHTML;
+  }
+
+  if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  checkLoginStatus();
   setDefaultPageTitle();
   handleActiveNav();
 
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const closeBtn = document.getElementById("close-btn");
-  
+
   // ===== PERUBAHAN DI SINI =====
   const mobileLinks = document.querySelectorAll(
     ".mobile-menu ul li a:not(.dropdown-toggle-mobile)"
