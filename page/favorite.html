@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ViDlix | Favorite</title>
-    <link rel="shortcut icon" href="../src/favicon.svg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../src/favicon-vidlix.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../src/style/global.css" />
     <link rel="stylesheet" href="../src/style/favoriteStyle.css" />
     <!-- Pake ini juga untuk icon -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,248 +18,345 @@
     <!-- Navbar (Copy Navbar ini ya) -->
     <nav class="navbar">
       <div class="logo-link">
-        <a href="#">
-          <img src="/src/image/logoFirst.svg" alt="ViDlix" />
+        <a href="../index.html">
+          <img src="../src/image/logoFirst.svg" alt="ViDlix" />
         </a>
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li><a href="genre.html">Genre</a></li>
           <li><a href="favorite.html">Favorite</a></li>
           <li><a href="subscription.html">Subscription</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li class="dropdown-container">
+            <a href="#" class="dropdown-toggle">
+              About
+              <svg data-lucide="chevron-down" class="dropdown-arrow"></svg>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
 
       <div class="button-nav">
-        <button class="login">Login</button>
-        <button class="signup">Sign Up</button>
+        <a href="login.html" class="login">Login</a>
+        <a href="register.html" class="signup">Sign Up</a>
         <button class="hamburger" id="hamburger-btn">
           <svg data-lucide="menu"></svg>
         </button>
       </div>
 
-      <!-- Mobile menu sidebar -->
       <div class="mobile-menu" id="mobile-menu">
         <button class="close-btn" id="close-btn">
           <svg data-lucide="x"></svg>
         </button>
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Genre</a></li>
-          <li><a href="" class="active">Favorite</a></li>
-          <li><a href="">Subscription</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="genre.html">Genre</a></li>
+          <li><a href="favorite.html">Favorite</a></li>
+          <li><a href="subscription.html">Subscription</a></li>
+          <li class="dropdown-container-mobile">
+            <a href="#" class="dropdown-toggle-mobile">
+              <span>About</span>
+              <svg
+                data-lucide="chevron-down"
+                class="dropdown-arrow-mobile"
+              ></svg>
+            </a>
+            <ul class="dropdown-menu-mobile">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
         </ul>
         <div class="button-sidebar">
-          <button class="login">Login</button>
-          <button class="signup">Sign Up</button>
+          <a href="login.html" class="login">Login</a>
+          <a href="register.html" class="signup">Sign Up</a>
         </div>
       </div>
     </nav>
 
     <!-- Main item Favorite page -->
     <main>
-    <div class="header">
-      <h2 class="title">Favorite Movies</h2>
-      <form class="search-form" role="search" aria-label="Search Movie">
-        <input
-          type="search"
-          id="search"
-          name="search"
-          class="search-input"
-          placeholder="Search Movie"
-          aria-label="Search Movie"
-        />
-        <!-- Local search icon image -->
-        <img src="/src/image/magnifier.svg" alt="" class="search-icon" aria-hidden="true" />
-      </form>
-    </div>
-    <div class="grid" role="list">
-      <!-- Repeat 9 movie cards -->
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+      <div class="header">
+        <h2 class="title">Favorite Movies</h2>
+        <form class="search-form" role="search" aria-label="Search Movie">
+          <input
+            type="search"
+            id="search"
+            name="search"
+            class="search-input"
+            placeholder="Search Movie"
+            aria-label="Search Movie"
+          />
+          <!-- Local search icon image -->
+          <img
+            src="/src/image/magnifier.svg"
+            alt=""
+            class="search-icon"
+            aria-hidden="true"
+          />
+        </form>
+      </div>
+      <div class="grid" role="list">
+        <!-- Repeat 9 movie cards -->
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+        </article>
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+        </article>
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+        </article>
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+        </article>
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+        </article>
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+        </article>
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+        </article>
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-      <article class="movie-card" role="listitem">
-        <img
-          src="/src/image/filmPoster.svg"
-          alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
-          class="movie-image"
-        />
-        <!-- Local love icon image -->
-        <img src="/src/image/loveFill.svg" alt="Love icon" class="icon-love" />
-        <!-- Local trash icon image -->
-        <img src="/src/image/delete.svg" alt="Trash icon" class="icon-trash" />
-        <div class="movie-info">
-          <h3 class="movie-title">Murder Mystery 2</h3>
-          <p class="movie-genre">Thriller, Horror, Action, 2025</p>
-          <div class="movie-duration">
-            <!-- Local clock icon image -->
-            <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
-            <span>1 Jam 45 Menit</span>
+        </article>
+        <article class="movie-card" role="listitem">
+          <img
+            src="/src/image/filmPoster.svg"
+            alt="Murder Mystery 2 movie poster showing Adam Sandler and Jennifer Aniston"
+            class="movie-image"
+          />
+          <!-- Local love icon image -->
+          <img
+            src="/src/image/loveFill.svg"
+            alt="Love icon"
+            class="icon-love"
+          />
+          <!-- Local trash icon image -->
+          <img
+            src="/src/image/delete.svg"
+            alt="Trash icon"
+            class="icon-trash"
+          />
+          <div class="movie-info">
+            <h3 class="movie-title">Murder Mystery 2</h3>
+            <p class="movie-genre">Thriller, Horror, Action, 2025</p>
+            <div class="movie-duration">
+              <!-- Local clock icon image -->
+              <img src="/src/image/timeMovie.svg" alt="" aria-hidden="true" />
+              <span>1 Jam 45 Menit</span>
+            </div>
           </div>
-        </div>
-      </article>
-    </div>
-  </main>
+        </article>
+      </div>
+    </main>
 
-        <!-- Footer bisa kalian Copy disini ya -->
+    <!-- Footer bisa kalian Copy disini ya -->
     <footer class="footer">
       <div class="footer-section">
         <div class="section-info">
@@ -296,11 +398,10 @@
               <h4>Navigation</h4>
             </div>
             <ul class="navigation-footer">
-              <li><a href="home.html">Home</a></li>
-              <li><a href="home.html">Genre</a></li>
-              <li><a href="home.html">Favorite</a></li>
-              <li><a href="home.html">Subscription</a></li>
-              <li><a href="home.html">Contact</a></li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="genre.html">Genre</a></li>
+              <li><a href="favorite.html">Favorite</a></li>
+              <li><a href="trending.html">Trending</a></li>
             </ul>
           </div>
           <div class="support-menu">
@@ -308,7 +409,8 @@
               <h4>Support</h4>
             </div>
             <ul>
-              <li><a href="home.html">Contact</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
             </ul>
           </div>
         </div>

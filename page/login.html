@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link
+      rel="shortcut icon"
+      href="../src/favicon-vidlix.svg"
+      type="image/x-icon"
+    />
+    <!-- CSS nya pake dua ya -->
+    <link rel="stylesheet" href="../src/style/global.css" />
+    <link rel="stylesheet" href="../src/style/loginRegisterStyle.css" />
+    <!-- Pake ini juga untuk icon -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <main class="main-section">
+      <img src="../src/image/login-register.png" alt="" />
+      <div class="login-content">
+        <div class="logo-section">
+          <img src="../src/image/logoSecondary.svg" alt="" />
+        </div>
+        <div class="form-section">
+          <div class="form-content">
+            <div class="form-title">
+              <svg data-lucide="user-round"></svg>
+              <h2>Login</h2>
+            </div>
+            <form action="#" class="form-login">
+              <div class="input-container">
+                <label for="email">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Masukkan Username Anda"
+                  required
+                />
+              </div>
+              <div class="input-container">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Masukkan Password Anda"
+                  required
+                />
+              </div>
+              <button type="submit" class="login-btn">Login</button>
+            </form>
+            <div class="separator">
+              <span>atau</span>
+            </div>
+            <div class="socmed-login">
+              <a href="#" class="socmed-icon" aria-label="Login with Google">
+                <svg data-lucide="chrome"></svg>
+              </a>
+              <a href="#" class="socmed-icon" aria-label="Login with Facebook">
+                <svg data-lucide="facebook"></svg>
+              </a>
+              <a href="#" class="socmed-icon" aria-label="Login with Email">
+                <svg data-lucide="mail"></svg>
+              </a>
+            </div>
+            <div class="register-link">
+              <p>Anda tidak memiliki akun ? <a href="register.html">Daftar disini</a></p>
+            </div>
+            <div class="line-end"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Javascript -->
+    <script src="../src/script/global.js"></script>
+    <script src="../src/script/login.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
