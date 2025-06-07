@@ -40,8 +40,8 @@
       </div>
 
       <div class="button-nav">
-        <button class="login">Login</button>
-        <button class="signup">Sign Up</button>
+        <a href="login.html" class="login">Login</a>
+        <a href="register.html" class="signup">Sign Up</a>
         <button class="hamburger" id="hamburger-btn">
           <svg data-lucide="menu"></svg>
         </button>
@@ -71,31 +71,61 @@
           </li>
         </ul>
         <div class="button-sidebar">
-          <button class="login" type="button">Login</button>
-          <button class="signup" type="button">Sign Up</button>
+          <a href="login.html" class="login">Login</a>
+          <a href="register.html" class="signup">Sign Up</a>
         </div>
       </div>
     </nav>
 
     <!-- Profile Section -->
     <section class="profile-section">
-      <h2>Personal Information</h2>
+      <div class="profile-header">
+        <h2>Personal Information</h2>
+        <button type="button" id="logout-btn" class="profile-logout-btn">
+          <svg data-lucide="log-out"></svg>
+          Log Out
+        </button>
+      </div>
       <div class="profile-container">
         <div class="profile-image">
-          <div class="circle"></div>
-          <a href="#" class="edit-profile">Edit Profile</a>
+          <div class="circle">
+            <img src="../src/image/user.png" alt="Gambar profile" />
+          </div>
+          <div class="edit-profile">
+            <a href="#">Edit Profile</a>
+          </div>
         </div>
-        <div class="profile-form">
-          <label for="nama"><span class="label-line"></span>Nama</label>
-          <input type="text" id="nama" name="nama" />
+        <div class="profile">
+          <div class="profile-form">
+            <label for="nama"><span class="label-line"></span>Nama</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              value="Reynarif Ammar Izza Rabbani Maulanana" readonly
+            />
+          </div>
 
-          <label for="email"><span class="label-line"></span>Email</label>
-          <input type="email" id="email" name="email" />
-
-          <label for="handphone"
-            ><span class="label-line"></span>Handphone</label
-          >
-          <input type="text" id="handphone" name="handphone" />
+          <div class="profile-form">
+            <label for="email"><span class="label-line"></span>Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value="reynnnrabbani@gmail.com" readonly
+            />
+          </div>
+          <div class="profile-form">
+            <label for="handphone"
+              ><span class="label-line"></span>Handphone</label
+            >
+            <input
+              type="text"
+              id="handphone"
+              name="handphone"
+              value="085711710909" readonly
+            />
+          </div>
         </div>
       </div>
     </section>
