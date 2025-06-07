@@ -530,7 +530,7 @@ nav {
 
 
 /* Responsive Breakpoints (Global Elements Only) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   /* Navbar responsif style */
   nav {
     padding: 0.5rem 1.5rem;
