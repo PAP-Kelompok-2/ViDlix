@@ -1,0 +1,141 @@
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+h2 span {
+    color: var(--secondary-color200);
+}
+
+.logo-container {
+  margin-bottom: 16px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container img {
+  width: 144px;
+  height: auto;
+}
+
+p.description {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  line-height: 1.3;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+h3 span {
+  color: var(--secondary-color200);
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background-color: var(--primary-color300);
+  margin: 0 auto 30px auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 880px;
+  }
+}
+
+.card {
+  border: 1px solid var(--secondary-color200);
+  border-radius: 6px;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+   transform: translateY(-6px);
+   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+}
+
+.card-image {
+  aspect-ratio: 1;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.card-image-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;  
+}
+
+.card-image:hover {
+  opacity: 0;
+}
+
+.card-image-hover:hover {
+  opacity: 1;  
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 0 0 4px 0;
+}
+
+.card-subtitle {
+  font-size: 0.75rem;
+  margin: 0 0 12px 0;
+}
+
+.instagram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--secondary-color200);
+}
+
+.instagram img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
