@@ -440,7 +440,7 @@
   justify-content: flex-end;
 }
 
-.more-btn button {
+.more-btn a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -453,14 +453,15 @@
   color: white;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.more-btn button svg {
+.more-btn a svg {
   margin-top: 2px;
   width: 24px;
 }
 
-.more-btn button:hover {
+.more-btn a:hover {
   background-color: var(--secondary-color100);
 }
 
@@ -560,7 +561,7 @@
     justify-content: center;
   }
 
-  .more-btn button {
+  .more-btn a {
     padding: 1.5rem 2rem;
   }
 
@@ -722,7 +723,7 @@
     height: 16px;
   }
 
-  .more-btn button {
+  .more-btn a {
     padding: 1rem 2rem;
     font-size: 14px;
   }
