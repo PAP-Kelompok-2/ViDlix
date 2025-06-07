@@ -404,11 +404,32 @@ nav {
 }
 
 .mobile-menu .profile-btn {
-  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  width: 100%;
+  gap: 0.5rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 600;
   font-size: 1rem;
   padding: 0.75rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
   background-color: var(--secondary-color200);
+  color: white;
+  border: 1px solid var(--secondary-color200);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu .profile-btn:hover {
+  background-color: var(--secondary-color100);
+  border-color: var(--secondary-color100);
+}
+
+.mobile-menu .profile-btn svg {
+  width: 20px;
+  height: 20px;
+  transform: translateY(-2px);
 }
 
 /* Footer Styling */
@@ -792,5 +813,9 @@ nav {
   }
   .footer-credential span {
     font-size: 0.85rem;
+  }
+
+  .button-nav .profile-btn {
+    display: none;
   }
 }
