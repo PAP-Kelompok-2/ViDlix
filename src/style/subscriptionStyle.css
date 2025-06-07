@@ -9,7 +9,7 @@
 
 .hero img {
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
   opacity: 0.8;
   display: block;
@@ -17,50 +17,32 @@
 
 .hero-content {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 5%;
   transform: translateY(-50%);
   color: white;
+  max-width: 90%;
 }
 
 .hero-content h1 {
   font-weight: 800;
-  font-size: 2.5rem;
-  margin: 0 0 0.5rem 0;
-  padding-bottom: 3px;
-}
-
-@media (min-width: 640px) {
-  .hero-content h1 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero-content p {
-  margin: 0 0 0.5rem 0;
-  font-size: 0.875rem;
-  line-height: 1.3;
-  max-width: 400px;
-}
-
-@media (min-width: 640px) {
-  .hero-content p {
-    font-size: 1rem;
-  }
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-width: 500px;
 }
 
 .btn-red {
-  background-color: var(--secondary-color100);
+  background-color: var(--secondary-color200);
   color: white;
   font-weight: 600;
-  font-size: 0.75rem;
-  padding: 0.375rem 1rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.25rem;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -68,18 +50,11 @@
 }
 
 .btn-red:hover {
-  background-color: var(--secondary-color200);
-}
-
-@media (min-width: 640px) {
-  .btn-red {
-    font-size: 0.875rem;
-    padding: 0.5rem 1.25rem;
-  }
+  background-color: var(--secondary-color100);
 }
 
 .info-box {
-  max-width: 640px;
+  max-width: 90%;
   margin: 2rem auto 0 auto;
   border: 1px solid var(--secondary-color200);
   border-radius: 0.375rem;
@@ -89,73 +64,48 @@
 
 .info-box h2 {
   font-weight: 600;
-  font-size: 1.125rem;
-  margin: 0;
-}
-
-@media (min-width: 640px) {
-  .info-box h2 {
-    font-size: 1.25rem;
-  }
+  font-size: 1.25rem;
 }
 
 .info-box p {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   margin-top: 0.25rem;
   max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 640px) {
-  .info-box p {
-    font-size: 0.875rem;
-  }
+  margin-inline: auto;
 }
 
 .plans {
-  max-width: 640px;
+  max-width: 90%;
   margin: 2rem auto 3rem auto;
-  padding: 0 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
 }
 
 .plan-card {
   border: 1px solid var(--secondary-color200);
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
   padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .plan-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .plan-card h3 {
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
-  margin: 0 0 0.5rem 0;
-}
-
-@media (min-width: 640px) {
-  .plan-card h3 {
-    font-size: 1.125rem;
-  }
+  margin-bottom: 0.5rem;
 }
 
 .plan-card p.description {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   text-align: center;
-  margin: 0 0 1rem 0;
-}
-
-@media (min-width: 640px) {
-  .plan-card p.description {
-    font-size: 0.875rem;
-  }
+  margin-bottom: 1rem;
 }
 
 .price-row {
@@ -164,13 +114,8 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  font-size: 0.75rem;
-}
-
-@media (min-width: 640px) {
-  .price-row {
-    font-size: 0.875rem;
-  }
+  font-size: 0.875rem;
+  flex-wrap: wrap;
 }
 
 .price-row .old-price {
@@ -189,22 +134,16 @@
 
 .plan-card .price {
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 1rem;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-@media (min-width: 640px) {
-  .plan-card .price {
-    font-size: 1rem;
-  }
-}
-
 .plan-card button {
-  background-color: var(--secondary-color100);
+  background-color: var(--secondary-color200);
   color: white;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   width: 100%;
   padding: 0.5rem 0;
   border: none;
@@ -214,30 +153,61 @@
 }
 
 .plan-card button:hover {
-  background-color: var(--secondary-color200);
+  background-color: var(--secondary-color100);
 }
 
 .plan-card p.cancel {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   margin-top: 0.5rem;
+  text-align: center;
 }
 
 .plan-card ul {
   margin-top: 1rem;
   padding-left: 1.25rem;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   list-style-type: disc;
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
 
+.plan-card ul li {
+  margin-bottom: 0.25rem;
+}
+
 @media (min-width: 640px) {
-  .plan-card ul {
-    font-size: 0.875rem;
+  .plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .btn-red {
+    font-size: 1rem;
+  }
+
+  .info-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .info-box p {
+    font-size: 1rem;
   }
 }
 
-.plan-card ul li {
-  margin-bottom: 0.25rem;
+@media (min-width: 1024px) {
+  .plans {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero-content {
+    left: 10%;
+  }
 }
