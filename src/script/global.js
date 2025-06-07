@@ -28,28 +28,26 @@ function handleActiveNav() {
     link.classList.remove("active");
 
     const linkHref = link.getAttribute("href");
-    if (!linkHref) {
+    if (!linkHref || linkHref === "#") {
       return;
     }
 
     const isCurrentUrlRoot =
-      currentPath === "/" || currentPath.endsWith("/index.html");
-
+      currentPath === "/" ||
+      currentPath.endsWith("/index.html") ||
+      currentPath.endsWith("/home.html");
     const isLinkToRoot =
       linkHref === "index.html" ||
       linkHref === "home.html" ||
-      linkHref === "./";
+      linkHref === "./" ||
+      linkHref === "/";
 
     if (isCurrentUrlRoot && isLinkToRoot) {
       link.classList.add("active");
       return;
     }
 
-    if (
-      currentPath.includes(linkHref) &&
-      linkHref !== "index.html" &&
-      linkHref !== ""
-    ) {
+    if (currentPath.endsWith(linkHref)) {
       link.classList.add("active");
     }
   });
@@ -62,7 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburgerBtn = document.getElementById("hamburger-btn");
   const mobileMenu = document.getElementById("mobile-menu");
   const closeBtn = document.getElementById("close-btn");
-  const mobileLinks = document.querySelectorAll(".mobile-menu ul li a");
+  
+  // ===== PERUBAHAN DI SINI =====
+  const mobileLinks = document.querySelectorAll(
+    ".mobile-menu ul li a:not(.dropdown-toggle-mobile)"
+  );
+  // ============================
 
   if (hamburgerBtn && mobileMenu && closeBtn) {
     hamburgerBtn.addEventListener("click", () => {
@@ -104,6 +107,20 @@ document.addEventListener("DOMContentLoaded", () => {
       if (event.target === videoModal) {
         closeModal();
       }
+    });
+  }
+
+  const dropdownToggleMobile = document.querySelector(
+    ".dropdown-toggle-mobile"
+  );
+  const dropdownContainerMobile = document.querySelector(
+    ".dropdown-container-mobile"
+  );
+
+  if (dropdownToggleMobile && dropdownContainerMobile) {
+    dropdownToggleMobile.addEventListener("click", (event) => {
+      event.preventDefault();
+      dropdownContainerMobile.classList.toggle("open");
     });
   }
 });
