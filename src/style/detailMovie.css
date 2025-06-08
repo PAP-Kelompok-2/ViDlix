@@ -1,0 +1,166 @@
+.main-section {
+  padding: 4rem 5rem;
+}
+
+.detail-movie {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.detail-movie .movie-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.detail-movie .movie-video iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.movie-info h2 {
+  font-family: var(--font-sora);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--primary-color100);
+}
+
+.genre-year {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.genre-year .year,
+.genre-year .genre {
+  font-family: var(--font-sora);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--primary-color100);
+}
+
+.genre-year .year {
+  font-weight: 700;
+  color: var(--primary-color400);
+}
+
+.rating-duration {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.rating-duration .rating,
+.rating-duration .duration {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.rating-duration svg {
+  width: 25px;
+  height: 25px;
+}
+
+.rating-duration span {
+  font-family: var(--font-sora);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.description-movie {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.description-movie p {
+  font-family: var(--font-inter);
+  font-size: 1.7rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+
+/* Responsive Tablet */
+@media screen and (max-width: 992px) {
+  .main-section {
+    padding: 3rem 2rem;
+  }
+
+  .movie-info h2 {
+    font-size: 2.5rem;
+  }
+
+  .genre-year .year,
+  .genre-year .genre {
+    font-size: 1.3rem;
+  }
+
+  .rating-duration svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .rating-duration span {
+    font-size: 1.1rem;
+  }
+
+  .description-movie p {
+    font-size: 1.5rem;
+  }
+
+  .detail-movie .movie-video iframe {
+    height: 450px;
+  }
+}
+
+
+/* Responsive Mobile */
+@media screen and (max-width: 768px) {
+  .main-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .movie-info h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .genre-year,
+  .rating-duration {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .rating-duration {
+    gap: 1rem;
+  }
+
+  .description-movie {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .description-movie p {
+    font-size: 1.4rem;
+  }
+
+  .detail-movie .movie-video iframe {
+    height: 250px;
+  }
+}
