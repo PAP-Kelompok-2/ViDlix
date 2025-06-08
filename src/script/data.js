@@ -159,3 +159,5 @@ const ALL_MOVIE_DATA = [
     isNewRelease: true,
   },
 ];
+
+window.ALL_MOVIE_DATA = ALL_MOVIE_DATA;

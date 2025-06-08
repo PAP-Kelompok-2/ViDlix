@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     moviesToRender.forEach((movie) => {
       const movieCardHTML = `
-      <a href="page/detail-dummy.html?id=${movie.id}" class="card-movie-link">
+      <a href="page/detail-movie.html" class="card-movie-link">
         <div class="card-movie">
           <img src="${movie.posterSrc}" alt="${movie.title} Poster">
           

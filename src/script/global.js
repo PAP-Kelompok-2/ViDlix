@@ -99,7 +99,6 @@ function updateNavbarForLoggedInUser(user) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  checkLoginStatus();
   setDefaultPageTitle();
   handleActiveNav();
 
